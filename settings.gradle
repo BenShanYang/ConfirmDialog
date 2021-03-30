@@ -1,0 +1,3 @@
+include ':ConfirmAlert'
+include ':app'
+rootProject.name = "ConfirmDialog"

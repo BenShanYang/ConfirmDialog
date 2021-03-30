@@ -1,0 +1,26 @@
+<resources>
+    <style name="AlphaBaseDialogTheme">
+        <!-- 除边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 去掉dialog标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设置是否悬浮 -->
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!--   将dialog背景色置为透明   -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <!--是否模糊-->
+        <!--        <item name="android:backgroundDimEnabled">false</item>-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--背景色调整，1全黑，系统默认0.5-->
+        <item name="android:backgroundDimAmount">0.5</item>
+    </style>
+
+    <!--dialog动画-->
+    <style name="BaseDialogWindowAnim" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/popup_alpha_in</item>
+        <item name="android:windowExitAnimation">@anim/popup_alpha_out</item>
+    </style>
+
+</resources>
