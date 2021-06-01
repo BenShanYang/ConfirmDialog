@@ -20,6 +20,10 @@ import androidx.annotation.Nullable;
  * @Date: 2021/3/30 18:11
  */
 public abstract class ConfirmDialog extends Dialog implements View.OnClickListener {
+
+    private TextView tvConfirm;//确认按钮
+    private TextView tvCancel;//取消按钮
+
     public ConfirmDialog(@NonNull Context context) {
         super(context, R.style.AlphaBaseDialogTheme);
         init();
@@ -38,8 +42,11 @@ public abstract class ConfirmDialog extends Dialog implements View.OnClickListen
     private void init() {
         setContentView(R.layout.dialog_confirm);
         windowConfig();
-        findViewById(R.id.tv_confirm).setOnClickListener(ConfirmDialog.this);
-        findViewById(R.id.tv_cancel).setOnClickListener(ConfirmDialog.this);
+        tvConfirm = (TextView) findViewById(R.id.tv_confirm);
+        tvCancel = (TextView) findViewById(R.id.tv_cancel);
+
+        tvConfirm.setOnClickListener(ConfirmDialog.this);
+        tvCancel.setOnClickListener(ConfirmDialog.this);
     }
 
     private void windowConfig() {
@@ -62,9 +69,7 @@ public abstract class ConfirmDialog extends Dialog implements View.OnClickListen
             onConfirm(ConfirmDialog.this);
         } else if (id == R.id.tv_cancel) {
             //取消
-            if (isShowing()) {
-                dismiss();
-            }
+            onCancel(ConfirmDialog.this);
         }
     }
 
@@ -170,6 +175,106 @@ public abstract class ConfirmDialog extends Dialog implements View.OnClickListen
         return ConfirmDialog.this;
     }
 
-    public abstract void onConfirm(ConfirmDialog dialog);
+    /**
+     * 设置确认按钮的文字
+     *
+     * @param text 确认按钮文字
+     * @return
+     */
+    public ConfirmDialog setConfirmText(CharSequence text) {
+        if (tvConfirm != null) {
+            tvConfirm.setText(text);
+        }
+        return ConfirmDialog.this;
+    }
+
+    /**
+     * 设置取消按钮的文字
+     *
+     * @param text 取消按钮文字
+     * @return
+     */
+    public ConfirmDialog setCancelText(CharSequence text) {
+        if (tvCancel != null) {
+            tvCancel.setText(text);
+        }
+        return ConfirmDialog.this;
+    }
+
+    /**
+     * 设置确认按钮的文字颜色
+     *
+     * @param color 确认按钮文字颜色
+     * @return
+     */
+    public ConfirmDialog setConfirmTextColor(@ColorInt int color) {
+        if (tvConfirm != null) {
+            tvConfirm.setTextColor(color);
+        }
+        return ConfirmDialog.this;
+    }
+
+    /**
+     * 设置取消按钮的文字颜色
+     *
+     * @param color 取消按钮文字颜色
+     * @return
+     */
+    public ConfirmDialog setCancelTextColor(@ColorInt int color) {
+        if (tvCancel != null) {
+            tvCancel.setTextColor(color);
+        }
+        return ConfirmDialog.this;
+    }
+
+    /**
+     * 设置确定按钮文字字号
+     *
+     * @param unit 字号的单位
+     * @param size 字号
+     * @return
+     */
+    public ConfirmDialog setConfirmTextSize(int unit, float size) {
+        if (tvConfirm != null) {
+            tvConfirm.setTextSize(unit, size);
+        }
+        return ConfirmDialog.this;
+    }
+
+    /**
+     * 设置取消按钮的文字字号
+     *
+     * @param unit 字号的单位
+     * @param size 字号
+     * @return
+     */
+    public ConfirmDialog setCancelTextSize(int unit, float size) {
+        if (tvCancel != null) {
+            tvCancel.setTextSize(unit, size);
+        }
+        return ConfirmDialog.this;
+    }
+
+    /**
+     * 确认按钮回调事件
+     *
+     * @param dialog 弹窗对象
+     */
+    public void onConfirm(ConfirmDialog dialog) {
+        if (dialog != null && dialog.isShowing()) {
+            dialog.dismiss();
+        }
+    }
+
+    /**
+     * 取消按钮点击事件
+     *
+     * @param dialog 弹窗对象
+     */
+    public void onCancel(ConfirmDialog dialog) {
+        if (dialog != null && dialog.isShowing()) {
+            dialog.dismiss();
+        }
+    }
 
 }
