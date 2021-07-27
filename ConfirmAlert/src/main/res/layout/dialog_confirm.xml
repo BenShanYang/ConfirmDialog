@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="260dp"
-        android:layout_height="150dp"
+        android:layout_height="160dp"
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:background="@drawable/confirm_bg"
@@ -38,7 +38,7 @@
             android:layout_marginBottom="50dp"
             android:ellipsize="end"
             android:gravity="center"
-            android:maxLines="2"
+            android:maxLines="4"
             android:textColor="#444444"
             android:textSize="14sp"
             tools:text="这事提示内容" />
