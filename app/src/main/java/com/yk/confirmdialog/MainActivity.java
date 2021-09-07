@@ -25,11 +25,14 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "确认弹窗", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }
-        }.setDialogTitle("确认弹窗").setContent("弹窗内容")
-                .setTitleTextColor(0xFF999999)
-                .setTitleTextSize(TypedValue.COMPLEX_UNIT_DIP, 16)
-                .setContentTextColor(0xFFFF0000)
-                .setContentTextSize(TypedValue.COMPLEX_UNIT_DIP, 14)
+        }
+                .setDialogTitle("确认弹窗")
+                .setDialogContent("弹窗内容")
+                .setDialogTitleColor(0xFF999999)
+                .setDialogTitleSize(16)
+                .setDialogContentColor(0xFFFF0000)
+                .setDialogContentSize(TypedValue.COMPLEX_UNIT_DIP, 14)
+                .setCanceledOutside(true)
                 .show();
     }
 
