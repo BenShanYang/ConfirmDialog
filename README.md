@@ -1,5 +1,5 @@
 # 确认弹窗 ConfirmDialog
-最新版本1.0.2 [![](https://www.jitpack.io/v/BenShanYang/ConfirmDialog.svg)](https://www.jitpack.io/#BenShanYang/ConfirmDialog)
+最新版本1.0.3 [![](https://www.jitpack.io/v/BenShanYang/ConfirmDialog.svg)](https://www.jitpack.io/#BenShanYang/ConfirmDialog)
 
 #### Step 1.添加依赖
 Gradle 
@@ -14,6 +14,6 @@ allprojects {
 
 ```groovy
 dependencies {
-  implementation 'com.github.BenShanYang:ConfirmDialog:1.0.2'
+  implementation 'com.github.BenShanYang:ConfirmDialog:1.0.3'
 }
 ```
