@@ -105,4 +105,5 @@
             app:layout_constraintLeft_toRightOf="@+id/vertical_divider"
             app:layout_constraintRight_toRightOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>
